@@ -189,12 +189,15 @@ namespace Chat
             return this.hist;
         }
 
+
+        //сохранение истории
         public void SaveToFile(string path, string hist)
         {
             path = @"File";
             // сохранение истории
             File.AppendAllText(path, hist);
         }
+
 
         // сумма
         private int Sum(string s)
