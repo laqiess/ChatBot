@@ -20,7 +20,7 @@ namespace Chat
         {
             Program.form_user = this; // теперь form_user будет ссылкой на форму Form_user
             InitializeComponent();
-            KeyPreview = true;
+            KeyPreview = true;// форма получит все события клавиш
         }
 
         // при нажатии на кнопку "ввод"

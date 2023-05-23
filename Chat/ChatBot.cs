@@ -184,6 +184,8 @@ namespace Chat
             this.hist = text;
         }
 
+
+        //возвращает историю чата
         public string get_hist()
         {
             return this.hist;

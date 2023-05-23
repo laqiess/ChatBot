@@ -27,7 +27,7 @@ namespace Chat
             ToolStripMenuItem aboutItem = new ToolStripMenuItem("Справка");
             
 
- 
+            //назначив оброботчик для события click,мы можемобробатывать нажатия на пункты меню
             aboutItem.Click += aboutItem_Click;
             menuStrip1.Items.Add(aboutItem);
 
@@ -76,7 +76,7 @@ namespace Chat
             // Символ @ перед строкой означает то, что escape-последовательности не обрабатываются.
 
             user.SaveToHist(textBox_out.Text);
-            user.SaveToFile(path, user.get_hist());
+            user.SaveToFile(path, user.get_hist());//получает историю чата
 
             // закрытие первой невидимой формы(чтобы закрывалась и вся программа)
             Program.form_user.Close();
@@ -95,7 +95,7 @@ namespace Chat
                 
                 // если файл сущесвует, то вывести из него данные в окно вывода
                 user.SaveToHist(File.ReadAllText(path));
-                textBox_out.Text = user.get_hist();
+                textBox_out.Text = user.get_hist();//получает историю чата
                 File.Delete(path);
             }
         }
