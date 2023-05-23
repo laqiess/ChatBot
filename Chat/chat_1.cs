@@ -26,16 +26,17 @@ namespace Chat
         // при нажатии на кнопку "ввод"
         private void button_username_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form2 = new Form_Chat();
-            form2.Show();
-            
+            this.Hide();//Скрывает элемент управления от пользователя
+            var form2 = new Form_Chat();//создаем форму
+            form2.Show();//отображаем ее на экран
+
+            //проверяет, не является ли текст пустой строкой
             if (this.textBox_username.Text != "")
             {
                 // передача второй форме имени пользователя
                 form2.Txt = this.textBox_username.Text;
             }
-            else form2.Txt = "user123456789";
+            else form2.Txt = "user123456789";//задаем имя пользователя,если он ничего не ввел
         }
     }
 }

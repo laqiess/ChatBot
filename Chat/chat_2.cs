@@ -94,7 +94,6 @@ namespace Chat
 
                 
                 // если файл сущесвует, то вывести из него данные в окно вывода
-                //textBox_out.Text = File.ReadAllText(path);
                 user.SaveToHist(File.ReadAllText(path));
                 textBox_out.Text = user.get_hist();
                 File.Delete(path);
