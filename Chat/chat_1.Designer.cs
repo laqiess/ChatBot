@@ -68,6 +68,7 @@ namespace Chat
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form_user";
             this.Text = "Введите имя";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

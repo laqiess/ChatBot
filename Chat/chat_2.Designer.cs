@@ -105,8 +105,8 @@ namespace Chat
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form_Chat";
             this.Text = "ЧатБот";
-            this.Load += new System.EventHandler(this.Form2_Load);
-
+            this.Load += new System.EventHandler(this.Chat2_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form2_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -6,11 +6,14 @@ using System;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml.Serialization;
 
 namespace Chat
 {
-
+    // todo: зачем абстрактный класс?
     // наследуется от абстрактного класса
     public class Chat : AbstractChatBot
     {
@@ -23,7 +26,10 @@ namespace Chat
 
         // имя пользователя
         private string username;
-        string hist;
+
+        //List<string> hist = new List<string>();
+        //string hist;
+        public List<string> hist = new List<string>();
 
 
 
@@ -51,6 +57,7 @@ namespace Chat
 
             //поиск погоды
             Regex Weather = new Regex(@"погода|градус(ов|ы)|температура");
+
             MatchCollection matchesJ = Weather.Matches(s);
             // если есть совпадения, написать ответ
             if (matchesJ.Count > 0)
@@ -58,9 +65,11 @@ namespace Chat
                 return this.Weather();                                 
             }
 
-
+            // todo: @ 
             //прив(\w *) обозначает, найти все слова, которые имеют корень "прив"
             Regex hello = new Regex(@"прив(\w*)");
+            // todo: to static
+            
             MatchCollection matchesH = hello.Matches(s);
             // если есть совпадения, написать ответ
             if (matchesH.Count > 0)
@@ -181,24 +190,62 @@ namespace Chat
         //сохранение данных с формы чатбота
         public void SaveToHist(string text)
         {
-            this.hist = text;
+            //this.hist = text;
+            hist.Add(text);
         }
 
 
-        //возвращает историю чата
-        public string get_hist()
+        /// гетер для истории
+        public List<string> get_hist()
         {
-            return this.hist;
+            return hist;
         }
 
 
-        //сохранение истории
-        public void SaveToFile(string path, string hist)
+        /// сохранение истории в файл
+        public void SaveToFile(string path, List<string> hist)
         {
-            path = @"File";
-            // сохранение истории
-            File.AppendAllText(path, hist);
+            // добавление в файл
+            using (StreamWriter writer = new StreamWriter(path, true))
+            {
+                for (int i = 0; i < hist.Count(); i++)
+                {
+                    writer.WriteLine(hist[i]);
+                }
+
+            }
         }
+
+        public void LoadHistory(string path)
+        {
+            // проверка на существование файла
+            // если не существует, то создать
+            if (File.Exists(path))
+            {
+                string s;
+
+                using (StreamReader reader = new StreamReader(path))
+                {
+
+                    do
+                    {
+                        // Прочитать строку из файла
+                        s = reader.ReadLine();
+
+                        hist.Add(s); // добавление строки в историю
+                    }
+                    while (s != null); // проверка, не конец ли файла
+
+                    reader.Close();
+
+                }
+            }
+
+
+        }
+
+
+
 
 
         // сумма

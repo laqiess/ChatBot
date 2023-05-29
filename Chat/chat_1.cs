@@ -38,5 +38,15 @@ namespace Chat
             }
             else form2.Txt = "user123456789";//задаем имя пользователя,если он ничего не ввел
         }
+
+
+        // ввод имени при нажатии на enter
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button_username.PerformClick();
+            }
+        }
     }
 }
