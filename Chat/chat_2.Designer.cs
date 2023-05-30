@@ -1,7 +1,7 @@
 ﻿/// @autor Ключерев Артемий 
 namespace Chat
 {
-    partial class Form_Chat
+    partial class Сhat_2
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Chat
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Chat));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Сhat_2));
             this.button_send = new System.Windows.Forms.Button();
             this.textBox_In = new System.Windows.Forms.TextBox();
             this.textBox_out = new System.Windows.Forms.TextBox();
@@ -88,7 +88,7 @@ namespace Chat
             this.button_clear.UseVisualStyleBackColor = true;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
-            // Form_Chat
+            // Сhat_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,10 +103,10 @@ namespace Chat
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form_Chat";
+            this.Name = "Сhat_2";
             this.Text = "ЧатБот";
             this.Load += new System.EventHandler(this.Chat2_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form2_KeyDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Chat2_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

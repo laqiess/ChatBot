@@ -13,15 +13,15 @@ using System.IO;
 namespace Chat
 {
     // форма для общения с чатботом
-    public partial class Form_Chat : Form
+    public partial class Сhat_2 : Form
     {
-        Chat user;
+        ChatB user;
 
-        public Form_Chat()
+        public Сhat_2()
         {
             InitializeComponent();
 
-            user = new Chat();
+            user = new ChatB();
 
             // справка
             ToolStripMenuItem aboutItem = new ToolStripMenuItem("Справка");
@@ -74,7 +74,7 @@ namespace Chat
 
 
         // горячая клавиша для отправки сообщения(enter)
-        private void Form2_KeyDown(object sender, KeyEventArgs e)
+        private void Chat2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -113,6 +113,7 @@ namespace Chat
             {
                 //writer.WriteLine(hist[i]);
                 textBox_out.Text += user.hist[i];
+                textBox_out.Text += Environment.NewLine;
                 textBox_out.Text += Environment.NewLine;
             }
 

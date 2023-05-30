@@ -15,7 +15,7 @@ namespace Chat
 {
     // todo: зачем абстрактный класс?
     // наследуется от абстрактного класса
-    public class Chat : AbstractChatBot
+    public class ChatB : AbstractChatBot
     {
 
 
@@ -65,11 +65,9 @@ namespace Chat
                 return this.Weather();                                 
             }
 
-            // todo: @ 
+            // todo: @считывает каждый символ отдельно 
             //прив(\w *) обозначает, найти все слова, которые имеют корень "прив"
             Regex hello = new Regex(@"прив(\w*)");
-            // todo: to static
-            
             MatchCollection matchesH = hello.Matches(s);
             // если есть совпадения, написать ответ
             if (matchesH.Count > 0)

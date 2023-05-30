@@ -11,13 +11,13 @@ namespace Chat
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
-        public static Form_user form_user; // переменная, которая будет содержать ссылку на форму Form_user
+        public static Сhat_1 form_user; // переменная, которая будет содержать ссылку на форму Сhat_1
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_user());
+            Application.Run(new Сhat_1());
         }
     }
 }

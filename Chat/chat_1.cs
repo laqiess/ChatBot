@@ -14,11 +14,11 @@ using System.IO;
 namespace Chat
 {
     // форма используется для ввода имени пользователя
-    public partial class Form_user : Form
+    public partial class Сhat_1 : Form
     {
-        public Form_user()
+        public Сhat_1()
         {
-            Program.form_user = this; // теперь form_user будет ссылкой на форму Form_user
+            Program.form_user = this; // теперь form_user будет ссылкой на форму Сhat_1
             InitializeComponent();
             KeyPreview = true;// форма получит все события клавиш
         }
@@ -27,7 +27,7 @@ namespace Chat
         private void button_username_Click(object sender, EventArgs e)
         {
             this.Hide();//Скрывает элемент управления от пользователя
-            var form2 = new Form_Chat();//создаем форму
+            var form2 = new Сhat_2();//создаем форму
             form2.Show();//отображаем ее на экран
 
             //проверяет, не является ли текст пустой строкой
@@ -41,7 +41,7 @@ namespace Chat
 
 
         // ввод имени при нажатии на enter
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private void Chat1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
