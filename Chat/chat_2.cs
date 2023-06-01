@@ -33,7 +33,9 @@ namespace Chat
 
             // обработчик при закрытии форма
             FormClosing += new FormClosingEventHandler(Chat2_Closing);
-
+            //позволяет обрабатывать нажатия клавиш на уровне формы,
+            //а не писать код для каждого элемента управления, который может получать события нажатия клавиш.
+            //форма получает все события клавиш
             KeyPreview = true;
         }
 
@@ -93,7 +95,7 @@ namespace Chat
             // Символ @ перед строкой означает то, что escape-последовательности не обрабатываются.
 
             //user.SaveToHist(textBox_out.Text);                  
-            user.SaveToFile(path, user.hist);//получает историю чата
+            user.SaveToFile(path);//получает историю чата
                                              
 
             // закрытие первой невидимой формы(чтобы закрывалась и вся программа)
@@ -113,7 +115,6 @@ namespace Chat
             {
                 //writer.WriteLine(hist[i]);
                 textBox_out.Text += user.hist[i];
-                textBox_out.Text += Environment.NewLine;
                 textBox_out.Text += Environment.NewLine;
             }
 

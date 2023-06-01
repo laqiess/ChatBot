@@ -47,6 +47,7 @@ namespace Chat
         }
 
 
+        // override - переопределение метода абстрактного класса предка
         public override string answer(string s)
         {
             // перевод всех символов в нижний регистр
@@ -201,7 +202,7 @@ namespace Chat
 
 
         /// сохранение истории в файл
-        public void SaveToFile(string path, List<string> hist)
+        public void SaveToFile(string path)
         {
             // добавление в файл
             using (StreamWriter writer = new StreamWriter(path, true))
